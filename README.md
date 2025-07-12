@@ -36,3 +36,11 @@ import { defineConfig } from '@daryl-software/ts-tools/config/vitest.config.mts'
 
 export default defineConfig();
 ``` 
+
+
+
+# To update the npm package
+```shell
+npx changeset
+pnpm run local-release
+```
