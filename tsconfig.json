@@ -1,0 +1,9 @@
+{
+  "extends": "./config/tsconfig-node.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true,
+    "sourceMap": true,
+    "declaration": true
+  }
+}
