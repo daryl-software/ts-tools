@@ -1,11 +1,10 @@
 import process from 'node:process';
 import { deepmerge } from 'deepmerge-ts';
-import { defineConfig as defineConfigOG  } from 'vitest/config';
+import { defineConfig as defineConfigOG , type UserConfigExport } from 'vitest/config';
 
-type VitestConfig = Awaited<Parameters<typeof defineConfigOG>[0]>;
 
-export function defineConfig(toMergeWith?: VitestConfig): ReturnType<typeof defineConfigOG> {
-    const config: VitestConfig = {
+export function defineConfig(toMergeWith?: UserConfigExport): ReturnType<typeof defineConfigOG> {
+    const config: UserConfigExport = {
         test: {
             logHeapUsage: true,
             pool: 'forks',
