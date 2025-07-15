@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.1.0
+
+### Minor Changes
+
+- 61abc08: Init project
+
 ## 1.0.1
 
 ### Patch Changes
