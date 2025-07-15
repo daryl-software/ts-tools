@@ -4,6 +4,7 @@ import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import eslintUnused from 'eslint-plugin-unused-imports';
 import eslintNode from 'eslint-plugin-n';
 import tseslint from 'typescript-eslint';
+import importPlugin from 'eslint-plugin-import';
 // @ts-expect-error - no types
 import pluginPromise from 'eslint-plugin-promise';
 import eslintPluginYml from 'eslint-plugin-yml';
@@ -32,6 +33,7 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
         },
         {
             plugins: {
+                import: importPlugin,
                 'unused-imports': eslintUnused,
                 vitest: eslintVitest,
             },
