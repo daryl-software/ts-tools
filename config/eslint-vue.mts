@@ -9,7 +9,7 @@ import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import pluginPromise from 'eslint-plugin-promise';
 import tseslint, { type ConfigArray } from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
-import vueConfig from "./eslint-rules/vue.ts";
+import vueConfig from './eslint-rules/vue.ts';
 
 type NonTypedPlugin = { configs: Record<string, ConfigArray[number]> };
 
@@ -131,16 +131,16 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray, w
         eslintPrettier,
         withOxlint
             ? {
-                ...oxlint.buildFromOxlintConfig({
-                    categories: {
-                        correctness: 'error',
-                        perf: 'warn',
-                        restriction: 'warn',
-                        suspicious: 'warn',
-                    },
-                }),
-            }
+                  ...oxlint.buildFromOxlintConfig({
+                      categories: {
+                          correctness: 'error',
+                          perf: 'warn',
+                          restriction: 'warn',
+                          suspicious: 'warn',
+                      },
+                  }),
+              }
             : {},
-        ...(extra ?? [])
+        ...(extra ?? []),
     ] as ConfigArray);
 }

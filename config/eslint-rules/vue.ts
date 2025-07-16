@@ -1,7 +1,7 @@
-import eslintPluginVue from "eslint-plugin-vue";
-import globals from "globals";
-import vueParser from "vue-eslint-parser";
-import tseslint, {type ConfigArray} from "typescript-eslint";
+import eslintPluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
+import vueParser from 'vue-eslint-parser';
+import tseslint, { type ConfigArray } from 'typescript-eslint';
 
 const config: ConfigArray = [
     ...eslintPluginVue.configs['flat/recommended'],

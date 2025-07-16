@@ -1,5 +1,5 @@
-import type {ConfigArray} from "typescript-eslint";
-import eslintVitest from "@vitest/eslint-plugin";
+import type { ConfigArray } from 'typescript-eslint';
+import eslintVitest from '@vitest/eslint-plugin';
 
 const config: ConfigArray = [
     {

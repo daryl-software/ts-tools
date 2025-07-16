@@ -9,7 +9,7 @@ import pluginPromise from 'eslint-plugin-promise';
 import eslintPluginYml from 'eslint-plugin-yml';
 import json from '@eslint/json';
 import { type ConfigArray } from 'typescript-eslint';
-import vitestConfig from "./eslint-rules/vitest.ts";
+import vitestConfig from './eslint-rules/vitest.ts';
 
 type NonTypedPlugin = { configs: Record<string, ConfigArray[number]> };
 
@@ -208,6 +208,6 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 quotes: ['error', 'single', { avoidEscape: true }],
             },
         },
-      ...(extra ?? [])
+        ...(extra ?? []),
     ] as ConfigArray);
 }
