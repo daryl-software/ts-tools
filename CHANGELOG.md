@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.1.2
+
+### Patch Changes
+
+- 69ada13: add deps
+
 ## 1.1.1
 
 ### Patch Changes
