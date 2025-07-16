@@ -39,7 +39,7 @@ export default defineConfig();
 
 
 
-# To update the npm package
+# To release a new version of the npm package
 ```shell
 npx changeset
 pnpm run local-release
