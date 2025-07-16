@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.1.1
+
+### Patch Changes
+
+- f7a73a6: Add vue config
+
 ## 1.1.0
 
 ### Minor Changes

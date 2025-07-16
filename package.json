@@ -1,6 +1,6 @@
 {
   "name": "@daryl-software/ts-tools",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Typescript tools, linter, formatter...",
   "files": [
     "config/**/*",
@@ -30,12 +30,12 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-n": "^17.21.0",
-    "eslint-plugin-prettier": "^5.5.1",
-    "eslint-plugin-vue": "^10.3.0",
     "eslint-plugin-oxlint": "^1.6.0",
     "eslint-plugin-playwright": "^2.2.0",
+    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-vue": "^10.3.0",
     "eslint-plugin-yml": "^1.18.0",
     "prettier": "^3.6.2",
     "ts-morph": "^26.0.0",
@@ -52,6 +52,8 @@
   "homepage": "https://github.com/daryl-software/ts-tools#readme",
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "devDependencies": {
-    "@changesets/cli": "^2.29.5"
-  }
+    "@changesets/cli": "^2.29.5",
+    "jiti": "^2.4.2"
+  },
+  "prettier": "./config/prettier.config.mjs"
 }
