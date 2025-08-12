@@ -125,7 +125,7 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 '@typescript-eslint/no-unused-vars': 'error',
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/prefer-string-starts-ends-with': 'error',
-                '@typescript-eslint/return-await': 'error',
+                '@typescript-eslint/return-await': ['error', 'always'],
                 '@typescript-eslint/switch-exhaustiveness-check': [
                     'error',
                     {

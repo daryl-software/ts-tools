@@ -30,6 +30,7 @@ in your `package.json` file, add the following:
 ``` 
 
 ## vitest
+🚨 Not yet supported in vitest you will get ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING
 in your `vitest.config.mts` file, add the following:
 ```typescript
 import { defineConfig } from '@daryl-software/ts-tools/config/vitest.config.mts';
