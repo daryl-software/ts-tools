@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.2.0
+
+### Minor Changes
+
+- e326534: Enforce @typescript-eslint/return-await rules, update dependencies.
+
 ## 1.1.2
 
 ### Patch Changes
