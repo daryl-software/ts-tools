@@ -1,5 +1,23 @@
 # @daryl-software/ts-tools
 
+## 1.3.2
+
+### Patch Changes
+
+- 267a36f: sort icons by name
+
+## 1.3.1
+
+### Patch Changes
+
+- 22810b4: Fix bin fontawesome
+
+## 1.3.0
+
+### Minor Changes
+
+- d52ed11: Remove OxLint, add Font Awesome Coden script
+
 ## 1.2.0
 
 ### Minor Changes
