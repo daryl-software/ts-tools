@@ -1,5 +1,4 @@
 import eslint from '@eslint/js';
-import eslintVitest from '@vitest/eslint-plugin';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 import eslintUnused from 'eslint-plugin-unused-imports';
 import eslintNode from 'eslint-plugin-n';
@@ -10,6 +9,7 @@ import pluginPromise from 'eslint-plugin-promise';
 import eslintPluginYml from 'eslint-plugin-yml';
 import json from '@eslint/json';
 import { type ConfigArray } from 'typescript-eslint';
+import vitestConfig from './eslint-rules/vitest.ts';
 
 type NonTypedPlugin = { configs: Record<string, ConfigArray[number]> };
 
@@ -35,7 +35,6 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
             plugins: {
                 import: importPlugin,
                 'unused-imports': eslintUnused,
-                vitest: eslintVitest,
             },
         },
         {
@@ -44,10 +43,6 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 'promise/no-nesting': 'off',
                 'promise/no-callback-in-promise': 'off',
                 'promise/no-multiple-resolved': 'error',
-            },
-        },
-        {
-            rules: {
                 complexity: ['error', 25],
                 'no-dupe-class-members': 'off',
                 'no-empty-pattern': 'off',
@@ -130,7 +125,7 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 '@typescript-eslint/no-unused-vars': 'error',
                 '@typescript-eslint/prefer-includes': 'error',
                 '@typescript-eslint/prefer-string-starts-ends-with': 'error',
-                '@typescript-eslint/return-await': 'error',
+                '@typescript-eslint/return-await': ['error', 'always'],
                 '@typescript-eslint/switch-exhaustiveness-check': [
                     'error',
                     {
@@ -187,6 +182,7 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 '@typescript-eslint/no-extraneous-class': 'warn',
             },
         },
+        ...vitestConfig,
         {
             // IN TESTS FILES
             files: ['tests/**/*.ts', 'tools/**/*.ts', '**/*.spec.ts', '**/spec.ts'],
@@ -195,14 +191,7 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 'n/no-process-exit': 'off',
                 '@typescript-eslint/no-unused-expressions': 'off',
                 '@typescript-eslint/no-non-null-assertion': 'off',
-                'vitest/valid-expect': 'off',
                 '@typescript-eslint/no-empty-function': 'off',
-                'vitest/expect-expect': [
-                    'error',
-                    {
-                        assertFunctionNames: ['expect*'],
-                    },
-                ],
                 '@typescript-eslint/unbound-method': 'warn',
                 '@typescript-eslint/no-unsafe-call': 'off',
                 '@typescript-eslint/no-unsafe-enum-comparison': 'off',
@@ -219,6 +208,6 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): 
                 quotes: ['error', 'single', { avoidEscape: true }],
             },
         },
-      ...(extra ?? [])
+        ...(extra ?? []),
     ] as ConfigArray);
 }
