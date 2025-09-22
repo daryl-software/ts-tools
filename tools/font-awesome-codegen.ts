@@ -1,3 +1,17 @@
+#!/usr/bin/env node
+
+/**
+ * This script generates a file with all the icons from the fontawesome library
+ * It uses the grep command to find all the icons in the directory and subdirectories
+ * It then generates a file with the icons imported and added to the library
+ *
+ * Usage:
+ * Use icons in your components like this ['fas', 'trash'] or ["fad", bool ? "trash" : 'trash-alt']]
+ * Run the script with the --src and --out arguments
+ * `npx tsx tools/font-awesome-codegen.ts --src=src --out=src/font-awesome-generated.ts`
+ *
+ */
+
 import { exec } from 'child_process';
 import { writeFileSync, realpathSync } from 'node:fs';
 import { argv, cwd } from 'node:process';
@@ -57,20 +71,24 @@ const src = argValue('src'),
     r2 = /(["'])([a-z0-9-]{3,})\1/g,
     cmd = `grep -Er ${extensions.map((ext) => `--include \\*.${ext}`).join(' ')} "(['\\"])${keys}\\1" ${diretoryToScan}`;
 
+console.log(out);
 // find content matching (fas|far|fab|fal|fad|fass) in diretoryToScan
 console.log(`🔎 Looking for icons in ${diretoryToScan} with extensions ${extensions.join(',')}`);
 // console.log(cmd);
 exec(cmd, (_, stdout) => {
     const libs = stdout.split('\n').reduce<Record<string, string[]>>((acc, line) => {
             [...line.matchAll(r1)].forEach(({ 2: lib, 3: icon }) => {
-                const icons = [...icon.matchAll(r2)].map((a) => a[2]);
+                if (!icon || !lib) {
+                    return;
+                }
+                const icons = [...icon.matchAll(r2)].map((a) => a[2] as string);
                 if (!icons.length) {
                     return;
                 }
                 if (!(lib in acc)) {
                     acc[lib] = [];
                 }
-                acc[lib].push(...icons);
+                acc[lib]?.push(...icons);
             });
             return acc;
         }, {}),
