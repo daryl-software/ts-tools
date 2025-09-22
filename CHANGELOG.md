@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.3.1
+
+### Patch Changes
+
+- 22810b4: Fix bin fontawesome
+
 ## 1.3.0
 
 ### Minor Changes

@@ -1,15 +1,18 @@
 {
   "name": "@daryl-software/ts-tools",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Typescript tools, linter, formatter...",
   "bin": {
-    "font-awesome-codegen": "./tools/font-awesome-codegen.ts"
+    "font-awesome-codegen": "./dist/font-awesome-codegen.js"
   },
   "files": [
     "config/**/*",
-    "tools/**/*"
+    "tools/**/*",
+    "dist/**/*"
   ],
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build",
     "local-release": "changeset version && changeset publish",
     "node-reset": "source ~/.nvm/nvm.sh; rm -rf node_modules pnpm-lock.yaml .pnpm-store .npm; nvm i; corepack enable && corepack use pnpm@latest && pnpm i"
   },
