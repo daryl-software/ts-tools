@@ -113,7 +113,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 ${l3.join('\n')}
 
-library.add(${symbols.join(',')});`;
+library.add(${symbols.sort().join(',')});`;
 
     console.log(`🍓 Found ${symbols.length} unique icons`);
     writeFileSync(output, data);
