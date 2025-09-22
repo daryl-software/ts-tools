@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.3.0
+
+### Minor Changes
+
+- d52ed11: Remove OxLint, add Font Awesome Coden script
+
 ## 1.2.0
 
 ### Minor Changes
