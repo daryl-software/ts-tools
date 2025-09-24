@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.3.3
+
+### Patch Changes
+
+- 7d57a6c: remove deprecated importsNotUsedAsValues from tsconfig.json
+
 ## 1.3.2
 
 ### Patch Changes
