@@ -2,8 +2,7 @@ import { Project } from 'ts-morph';
 import { execSync } from 'child_process';
 import assert from 'node:assert';
 
-// eslint-disable-next-line prefer-destructuring
-const targetFile = process.argv[2];
+const targetFile: string = process.argv[2] ?? '';
 if (!targetFile) {
     console.error('Usage: node tools/remove-unused-vars.ts <filename>');
     process.exit(1);

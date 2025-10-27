@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import unusedImports from 'eslint-plugin-unused-imports';
 import pluginVitest from '@vitest/eslint-plugin';
 import pluginPlaywright from 'eslint-plugin-playwright';
-import oxlint from 'eslint-plugin-oxlint';
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
 import eslintPrettier from 'eslint-plugin-prettier/recommended';
 // @ts-expect-error - no types
@@ -13,7 +12,7 @@ import vueConfig from './eslint-rules/vue.ts';
 
 type NonTypedPlugin = { configs: Record<string, ConfigArray[number]> };
 
-export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray, withOxlint: boolean = false): ConfigArray {
+export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray): ConfigArray {
     return tseslint.config([
         eslint.configs.recommended,
         (pluginPromise as NonTypedPlugin).configs['flat/recommended'],
@@ -129,18 +128,6 @@ export function getEslintConfig(tsConfigJSONFile: string, extra?: ConfigArray, w
         },
         skipFormatting,
         eslintPrettier,
-        withOxlint
-            ? {
-                  ...oxlint.buildFromOxlintConfig({
-                      categories: {
-                          correctness: 'error',
-                          perf: 'warn',
-                          restriction: 'warn',
-                          suspicious: 'warn',
-                      },
-                  }),
-              }
-            : {},
         ...(extra ?? []),
     ] as ConfigArray);
 }
