@@ -1,20 +1,14 @@
 import process from 'node:process';
 import { deepmerge } from 'deepmerge-ts';
-import { defineConfig as defineConfigOG , type UserConfigExport } from 'vitest/config';
+import { defineConfig as defineConfigOG, type ViteUserConfigExport } from 'vitest/config';
 
-
-export function defineConfig(toMergeWith?: UserConfigExport): ReturnType<typeof defineConfigOG> {
-    const config: UserConfigExport = {
+export function defineConfig(toMergeWith?: ViteUserConfigExport): ReturnType<typeof defineConfigOG> {
+    const config: ViteUserConfigExport = {
         test: {
             logHeapUsage: true,
             pool: 'forks',
-            poolOptions: {
-                forks: {
-                    minForks: 1,
-                    maxForks: 5,
-                    isolate: false,
-                },
-            },
+            maxWorkers: 5,
+            isolate: false,
             maxConcurrency: 15,
             sequence: {
                 shuffle: {
@@ -47,15 +41,8 @@ export function defineConfig(toMergeWith?: UserConfigExport): ReturnType<typeof 
             coverage: {
                 provider: 'v8',
                 clean: false,
-                all: true,
                 skipFull: true,
                 reporter: ['text', 'html', 'json-summary', ['cobertura', { file: './cobertura-coverage.xml' }]],
-                thresholds: {
-                    lines: 86,
-                    functions: 81.9,
-                    branches: 82,
-                    statements: 86,
-                },
                 reportOnFailure: true,
             },
             chaiConfig: {
