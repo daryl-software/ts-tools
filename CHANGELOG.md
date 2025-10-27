@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.3.4
+
+### Patch Changes
+
+- 39cff38: Update vitest to v4
+
 ## 1.3.3
 
 ### Patch Changes
