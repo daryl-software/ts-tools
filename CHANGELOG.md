@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- cf1c717: Update vitest to v4
+- 7d57a6c: remove deprecated importsNotUsedAsValues from tsconfig.json
 
 ## 1.3.2
 
