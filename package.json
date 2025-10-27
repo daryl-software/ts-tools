@@ -1,6 +1,6 @@
 {
   "name": "@daryl-software/ts-tools",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Typescript tools, linter, formatter...",
   "bin": {
     "font-awesome-codegen": "./dist/tools/font-awesome-codegen.js"

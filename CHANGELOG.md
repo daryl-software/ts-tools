@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.3.3
+
+### Patch Changes
+
+- cf1c717: Update vitest to v4
+
 ## 1.3.2
 
 ### Patch Changes
