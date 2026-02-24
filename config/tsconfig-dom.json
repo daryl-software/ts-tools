@@ -4,5 +4,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "vue",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   }
 }

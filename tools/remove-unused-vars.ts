@@ -9,7 +9,7 @@ if (!targetFile) {
 }
 
 function removeUnusedVars() {
-    let eslintOutput = '';
+    let eslintOutput: string;
     try {
         eslintOutput = execSync(`eslint ${targetFile}`, { encoding: 'utf8' });
         console.log(`ESLint output for ${targetFile}:\n${eslintOutput}`);
