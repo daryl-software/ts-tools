@@ -1,5 +1,11 @@
 # @daryl-software/ts-tools
 
+## 1.4.0
+
+### Minor Changes
+
+- 5d3236c: Fix dom/node tsconfig
+
 ## 1.3.4
 
 ### Patch Changes
